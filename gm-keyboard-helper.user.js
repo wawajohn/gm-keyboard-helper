@@ -73,5 +73,6 @@ if (dn_index > -1) {
 
 if (go_debug) {
 	console.table(sites);
-	console.table([{"dn_index": dn_index, "pre_page": pre_page, "next_page": next_page}]);
+  console.table([{"dn_index": dn_index, "pre_page": pre_page, "next_page": next_page}]);
+  console.table(.l-pagination li).attr("href");
 }
