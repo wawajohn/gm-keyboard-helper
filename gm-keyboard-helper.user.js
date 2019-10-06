@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1
+// @version  1.1.1
 // @downloadURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
 // @updateURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
 // @grant    none
