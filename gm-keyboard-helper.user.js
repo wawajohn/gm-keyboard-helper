@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.2
-// @downloadURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
-// @updateURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
+// @version  1.1.3
+// @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
+// @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
 // @require	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
 // @icon https://wp.ix.market/bt/images/favicon-96x96.png
@@ -33,8 +33,8 @@ const go_debug = false;
      next_page: $(".btn-group-paging > a").eq(2).attr("href")
     },
     {site: "www.mobile01.com",
-     pre_page: $(".u-gapBottom--max .c-pagination").attr("href") || $(".c-pagination--prev").attr("href"),
-     next_page: $(".u-gapBottom--max .c-pagination").attr("href") || $(".c-pagination--next").attr("href")
+     pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
+     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
     },
   ]
  
