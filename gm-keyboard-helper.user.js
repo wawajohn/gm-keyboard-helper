@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.1
+// @version  1.1.2
 // @downloadURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
 // @updateURL https://github.com/wawajohn/gm-keyboard-helper/raw/master/gm-keyboard-helper.user.js
 // @grant    none
@@ -33,8 +33,8 @@ const go_debug = false;
      next_page: $(".btn-group-paging > a").eq(2).attr("href")
     },
     {site: "www.mobile01.com",
-     pre_page: $(".c-pagination--prev").attr("href"),
-     next_page: $(".c-pagination--next").attr("href")
+     pre_page: $(".u-gapBottom--max .c-pagination").attr("href") || $(".c-pagination--prev").attr("href"),
+     next_page: $(".u-gapBottom--max .c-pagination").attr("href") || $(".c-pagination--next").attr("href")
     },
   ]
  
@@ -74,5 +74,4 @@ if (dn_index > -1) {
 if (go_debug) {
 	console.table(sites);
   console.table([{"dn_index": dn_index, "pre_page": pre_page, "next_page": next_page}]);
-  console.table(.l-pagination li).attr("href");
 }
