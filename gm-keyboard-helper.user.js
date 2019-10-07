@@ -30,11 +30,13 @@ const go_debug = false;
     },
     {site: "www.ptt.cc",
      pre_page: $(".btn-group-paging > a").eq(1).attr("href"),
-     next_page: $(".btn-group-paging > a").eq(2).attr("href")
+     next_page: $(".btn-group-paging > a").eq(2).attr("href"),
+     prefetch: $(".btn-group-paging > a").attr("rel", "prefetch")
     },
     {site: "www.mobile01.com",
      pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
-     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
+     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href"),
+     prefetch: $(".c-pagination").attr("rel", "prefetch")
     },
     {site: "www.google.com.tw",
      pre_page: $(".cur").prev().children().attr("href"),
