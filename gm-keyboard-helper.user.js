@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 
-const go_debug = false;
+const go_debug = true;
 
 // Get current page domain name
 	var this_page = window.location.hostname;
