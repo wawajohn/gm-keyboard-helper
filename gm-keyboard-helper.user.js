@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.6
+// @version  1.1.7
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
@@ -30,13 +30,11 @@ const go_debug = true;
     },
     {site: "www.ptt.cc",
      pre_page: $(".btn-group-paging > a").eq(1).attr("href"),
-     next_page: $(".btn-group-paging > a").eq(2).attr("href"),
-     prefetch: $(".btn-group-paging > a").attr("rel", "prefetch")
+     next_page: $(".btn-group-paging > a").eq(2).attr("href")
     },
     {site: "www.mobile01.com",
      pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
-     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href"),
-     prefetch: $(".c-pagination").attr("rel", "prefetch")
+     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
     },
     {site: "www.google.com.tw",
      pre_page: $(".cur").prev().children().attr("href"),
@@ -44,8 +42,8 @@ const go_debug = true;
     },
     {site: "www.commonhealth.com.tw",
      pre_page: $(".pagination a.prev").attr("href"),
-     next_page: $(".pagination a.next").attr("href"),
-     prefetch: $(".pagination a").attr("rel", "prefetch")
+     next_page: $(".pagination a.next").attr("href")
+
     },
   ]  
 
