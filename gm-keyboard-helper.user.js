@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.5
+// @version  1.1.6
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
@@ -42,8 +42,12 @@ const go_debug = true;
      pre_page: $(".cur").prev().children().attr("href"),
      next_page: $(".cur").next().children().attr("href")
     },
-  ]
- 
+    {site: "www.commonhealth.com.tw",
+     pre_page: $(".pagination a.prev").attr("href"),
+     next_page: $(".pagination a.next").attr("href"),
+     prefetch: $(".pagination a").attr("rel", "prefetch")
+    },
+  ]  
 
 
 
