@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.8
+// @version  1.1.9
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
@@ -26,34 +26,39 @@ const go_debug = false;
   const sites = [
 	// ithome
     {site: "ithelp.ithome.com.tw",
-     pre_page: $(".article-series-page__arrow--left").parent().attr("href") || $("ul.pagination > li ").first().children().attr("href"),
-     next_page: $(".article-series-page__arrow--right").parent().attr("href") || $("ul.pagination > li ").last().children().attr("href")
+    pre_page: $(".article-series-page__arrow--left").parent().attr("href") || $("ul.pagination > li ").first().children().attr("href"),
+    next_page: $(".article-series-page__arrow--right").parent().attr("href") || $("ul.pagination > li ").last().children().attr("href")
     },
 	// ptt
     {site: "www.ptt.cc",
-     pre_page: $(".btn-group-paging > a").eq(1).attr("href"),
-     next_page: $(".btn-group-paging > a").eq(2).attr("href")
+    pre_page: $(".btn-group-paging > a").eq(1).attr("href"),
+    next_page: $(".btn-group-paging > a").eq(2).attr("href")
     },
 	// mobile01
     {site: "www.mobile01.com",
-     pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
-     next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
+    pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
+    next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
     },
 	// google search
     {site: "www.google.com.tw",
-     pre_page: $(".cur").prev().children().attr("href"),
-     next_page: $(".cur").next().children().attr("href")
+    pre_page: $(".cur").prev().children().attr("href"),
+    next_page: $(".cur").next().children().attr("href")
     },
 	// 康健
     {site: "www.commonhealth.com.tw",
-     pre_page: $(".pagination a.prev").attr("href"),
-     next_page: $(".pagination a.next").attr("href")
+    pre_page: $(".pagination a.prev").attr("href"),
+    next_page: $(".pagination a.next").attr("href")
     },
 	// 每日時報
     {site: "wubaiqing.github.io",
-     pre_page: $(".page-nav a.prev").attr("href") || $(".page-nav .prev").children().attr("href"),
-     next_page: $(".page-nav a.next").attr("href") || $(".page-nav .next").children().attr("href")
+    pre_page: $(".page-nav a.prev").attr("href") || $(".page-nav .prev").children().attr("href"),
+    next_page: $(".page-nav a.next").attr("href") || $(".page-nav .next").children().attr("href")
     },
+  // GQ Taiwan
+    {site: "www.gq.com.tw",
+    pre_page: $(".pagination .previous > a").attr("href"),
+    next_page: $(".pagination .next > a").attr("href")
+    }
   ]  
 
 
