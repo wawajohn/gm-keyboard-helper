@@ -6,7 +6,7 @@
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
 // @require	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
-// @icon https://wp.ix.market/bt/images/favicon-96x96.png
+// @icon https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/favicon-96x96.png
 // @run-at document-end
 // ==/UserScript==
 
