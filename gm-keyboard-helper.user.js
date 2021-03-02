@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.1.9
+// @version  1.2.0
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
 // @require	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
-// @icon https://wp.ix.market/bt/images/favicon-96x96.png
+// @icon https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/favicon-96x96.png
 // @run-at document-end
 // ==/UserScript==
 
@@ -20,44 +20,50 @@ const go_debug = false;
 // Define site list
 /*
   site: site domain name
-  pre_page: get pre page method
+  prev_page: get pre page method
   next_page: get next page method
 */
   const sites = [
 	// ithome
-    {site: "ithelp.ithome.com.tw",
-    pre_page: $(".article-series-page__arrow--left").parent().attr("href") || $("ul.pagination > li ").first().children().attr("href"),
-    next_page: $(".article-series-page__arrow--right").parent().attr("href") || $("ul.pagination > li ").last().children().attr("href")
+    {
+        site: "ithelp.ithome.com.tw",
+        prev_page: $(".article-series-page__arrow--left").parent().attr("href") || $("ul.pagination > li ").first().children().attr("href"),    next_page: $(".article-series-page__arrow--right").parent().attr("href") || $("ul.pagination > li ").last().children().attr("href")
     },
 	// ptt
-    {site: "www.ptt.cc",
-    pre_page: $(".btn-group-paging > a").eq(1).attr("href"),
-    next_page: $(".btn-group-paging > a").eq(2).attr("href")
+    {
+        site: "www.ptt.cc",
+        prev_page: $(".btn-group-paging > a").eq(1).attr("href"),
+        next_page: $(".btn-group-paging > a").eq(2).attr("href")
     },
 	// mobile01
-    {site: "www.mobile01.com",
-    pre_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
-    next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
+    {
+        site: "www.mobile01.com",
+        prev_page: $(".c-pagination--prev").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").prev().children().attr("href"),
+        next_page: $(".c-pagination--next").attr("href") || $(".u-gapBottom--max .l-pagination .is-active").next().children().attr("href")
     },
 	// google search
-    {site: "www.google.com.tw",
-    pre_page: $(".cur").prev().children().attr("href"),
-    next_page: $(".cur").next().children().attr("href")
+    {
+        site: "www.google.com.tw",
+        prev_page: $(".cur").prev().children().attr("href"),
+        next_page: $(".cur").next().children().attr("href")
     },
 	// 康健
-    {site: "www.commonhealth.com.tw",
-    pre_page: $(".pagination a.prev").attr("href"),
-    next_page: $(".pagination a.next").attr("href")
+    {
+        site: "www.commonhealth.com.tw",
+        prev_page: $(".pagination a.prev").attr("href"),
+        next_page: $(".pagination a.next").attr("href")
     },
 	// 每日時報
-    {site: "wubaiqing.github.io",
-    pre_page: $(".page-nav a.prev").attr("href") || $(".page-nav .prev").children().attr("href"),
-    next_page: $(".page-nav a.next").attr("href") || $(".page-nav .next").children().attr("href")
+    {
+        site: "wubaiqing.github.io",
+        prev_page: $(".page-nav a.prev").attr("href") || $(".page-nav .prev").children().attr("href"),
+        next_page: $(".page-nav a.next").attr("href") || $(".page-nav .next").children().attr("href")
     },
   // GQ Taiwan
-    {site: "www.gq.com.tw",
-    pre_page: $(".pagination .previous > a").attr("href"),
-    next_page: $(".pagination .next > a").attr("href")
+    {
+        site: "www.gq.com.tw",
+        prev_page: $(".pagination .previous > a").attr("href"),
+        next_page: $(".pagination .next > a").attr("href")
     },
   // 猴子 Git
     {
@@ -76,17 +82,27 @@ const go_debug = false;
   }).indexOf(this_page);
 
 if (dn_index > -1) {
-	var pre_page = sites[dn_index].pre_page;
-	var next_page = sites[dn_index].next_page;
+	var prev_page = sites[dn_index].prev_page;
+    var next_page = sites[dn_index].next_page;
+    };
+    
+if ( $("link[rel=next]").length > 0 ) {
+    var next_page = $("link[rel=next]").attr("href");
+}
 
+if ( $("link[rel=prev]").length > 0 ) {
+    var prev_page = $("link[rel=prev]").attr("href");
+}
 
+bindkey();
 
+function bindkey () {
   $("*").keydown( function(event) {
-    let bind_key = event.which;
-      switch(bind_key) {
+    let bind_key_no = event.which;
+      switch(bind_key_no) {
         case 37:
-          if (pre_page) {
-          	location.href = pre_page;
+          if (prev_page) {
+          	location.href = prev_page;
           }
           break;
         case 39:
@@ -100,6 +116,8 @@ if (dn_index > -1) {
 
 
 if (go_debug) {
-	console.table(sites);
-  console.table([{"dn_index": dn_index, "pre_page": pre_page, "next_page": next_page}]);
+    console.table(sites);
+    console.table(
+        [{"dn_index": dn_index, "prev_page": prev_page, "next_page": next_page}]
+        );
 }
