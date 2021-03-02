@@ -58,6 +58,12 @@ const go_debug = false;
     {site: "www.gq.com.tw",
     pre_page: $(".pagination .previous > a").attr("href"),
     next_page: $(".pagination .next > a").attr("href")
+    },
+  // 猴子 Git
+    {
+      site: "backlog.com",
+      pre_page: $(".Paging .Nav-prev > a").attr("href"),
+      next_page: $(".Paging .Nav-next > a").attr("href")
     }
   ]  
 
