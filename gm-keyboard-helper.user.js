@@ -5,7 +5,7 @@
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
-// @require	https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js
+// @require	https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @icon https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/favicon-96x96.png
 // @run-at document-end
 // ==/UserScript==
