@@ -1,18 +1,18 @@
 // ==UserScript==
 // @name     Keyboard Helper
 // @description	利用左右方向進行上下頁翻頁。
-// @version  1.2.3
+// @version  1.2.4
 // @downloadURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @updateURL https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/gm-keyboard-helper.user.js
 // @grant    none
 // @require	https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js
 // @icon https://raw.githubusercontent.com/wawajohn/gm-keyboard-helper/master/favicon-96x96.png
 // @run-at document-end
-// @include /^https?:\/\/ithelp\.ithome\.com\.tw\/.*$/
-// @include /^https?:\/\/*.ptt.cc\/.*$/
-// @include /^https?:\/\/*.mobile01.com\/.*$/
-// @include /^https?:\/\/*.commonhealth.com.tw\/.*$/
-// @include /^https?:\/\/*.gq.com.tw\/.*$/
+// @match https://ithelp.ithome.com.tw/*
+// @match https://*.ptt.cc/*
+// @match https://*.mobile01.com/*
+// @match https://*.commonhealth.com.tw/*
+// @match https://*.gq.com.tw/*
 // ==/UserScript==
 
 
